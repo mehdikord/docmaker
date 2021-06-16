@@ -56,13 +56,20 @@ class ProjectController extends Controller
             'logo'=>$logo,
             'description'=>$request->description,
         ]);
-        return back()->with(alert_message('باموفقیت ویرایش ثبت شد','success'));
+        return back()->with(alert_message('باموفقیت ویرایش  شد','success'));
 
     }
 
     public function show(Project $project)
     {
         return view('management.projects.show',compact('project'));
+    }
+
+    public function delete(Project $project)
+    {
+        $project->delete();
+        return back()->with(alert_message('باموفقیت حذف شد','success'));
+
     }
 
     public function add_folder(Project $project,Request $request)

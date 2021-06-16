@@ -213,7 +213,7 @@
                 cancelButtonText: 'خیر'
             }).then((result) => {
                 if (result.value) {
-                    window.open('/management/settings/brands/delete/'+id,'_self');
+                    window.open('/management/projects/delete/'+id,'_self');
                 }
             })
 
