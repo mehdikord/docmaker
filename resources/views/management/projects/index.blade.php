@@ -115,11 +115,11 @@
                         @foreach($projects as $project)
                             <tr>
                                 <td>
-                                    <img class="img-data mr-2" src="@if(!empty($project->logo)) {{asset(\Illuminate\Support\Facades\Storage::url($project->logo))}} @endif" alt="">
+                                    <img class="img-data mr-2" src="@if(!empty($project->logo)) {{asset(\Illuminate\Support\Facades\Storage::url($project->logo))}} @else {{asset('assets/media/default/api-default.svg')}} @endif" alt="">
                                     {{$project->name}}
                                 </td>
                                 <td>{{$project->slug}}</td>
-                                <td>{{$project->url}}</td>
+                                <td dir="ltr" {{$project->url}}</td>
                                 <td>{{$project->description}}</td>
                                 <td class="text-center">
                                     <a href="{{route('management_project_show',['project'=>$project->id])}}"  title="مشاهده جزئیات" class="btn btn-icon btn-light-success btn-sm"><i class="fas fa-eye"></i></a>
